@@ -74,7 +74,7 @@ export default class App extends React.Component {
       console.log(json)
       this.setState({ movie: json.results[0]
        });
-
+       console.debug("the movie is now: " + this.state.movie)
       });
   }
 
@@ -85,8 +85,8 @@ export default class App extends React.Component {
                    placeholder="Enter a movie name!"
                    placeholderTextColor="#aaa"
                    onChangeText={this.movieNameInputChanged}
-                   onSubmitEditing={this.movieNameInputSubmitted}
-
+                   value={this.state.movieNameInput}
+                   onSubmitEditing={() => {this.movieNameInputSubmitted(), this.setState({movieNameInput: ""})}}
                    autoFocus={true} />
 
         {/* If there's a movie, use the Movie component to show it  */}
