@@ -28,6 +28,7 @@ Hints:
 import React from 'react';
 import { Image, TextInput, Text, View, StyleSheet } from 'react-native';
 
+
 class Movie extends React.Component {
   render() {
     return (
@@ -73,7 +74,7 @@ export default class App extends React.Component {
       console.log(json)
       this.setState({ movie: json.results[0]
        });
-       console.debug("the movie is now: " + this.state.movie)
+
       });
   }
 
@@ -85,7 +86,7 @@ export default class App extends React.Component {
                    placeholderTextColor="#aaa"
                    onChangeText={this.movieNameInputChanged}
                    onSubmitEditing={this.movieNameInputSubmitted}
-                   value={this.state.movie}
+
                    autoFocus={true} />
 
         {/* If there's a movie, use the Movie component to show it  */}
